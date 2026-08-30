@@ -1,0 +1,89 @@
+/**
+ * LiftIQ Design Tokens
+ * -----------------------------------------------------
+ * Dark-only by intent (see liftiq_design_system.html, "Por qué dark-first"):
+ * gym lighting + screen held at a distance means a dark UI reduces eye
+ * strain and lets the BlazePose skeleton overlay read clearly without
+ * needing aggressive colors. A light/dark toggle is an OPEN decision for
+ * later — this scaffold ships dark-only, forced regardless of system theme.
+ */
+
+@import '@ionic/angular/css/palettes/dark.always.css';
+
+:root {
+  /* ---- Core palette (exact hex from the design system) ---- */
+  --liftiq-midnight: #0f0f14; /* Background */
+  --liftiq-surface: #1a1a22; /* Cards / sheets */
+  --liftiq-elevated: #24242e; /* Modals / tabs */
+  --liftiq-sky-blue: #63c5ff; /* Primary action */
+  --liftiq-sky-dim: #1a3a52; /* Tinted fill */
+  --liftiq-good: #4ade80; /* Correct technique */
+  --liftiq-warn: #fabd32; /* Angle near limit */
+  --liftiq-error: #ff6b6b; /* Bad technique / favorite */
+
+  --liftiq-text-100: #f0f0f5; /* Primary titles */
+  --liftiq-text-60: rgba(240, 240, 245, 0.6); /* Secondary text */
+  --liftiq-text-35: rgba(240, 240, 245, 0.35); /* Labels / hints */
+  --liftiq-separator: rgba(255, 255, 255, 0.07); /* Dividers */
+
+  /* ---- Spacing tokens ---- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+
+  /* ---- Border radius tokens ---- */
+  --radius-chip: 4px; /* chips, badges */
+  --radius-control: 10px; /* inputs, buttons */
+  --radius-card: 14px; /* exercise cards */
+  --radius-sheet: 20px; /* sheets / modals */
+
+  /* ---- Typography ---- */
+  --ion-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ---- Ionic background/text ---- */
+  --ion-background-color: var(--liftiq-midnight);
+  --ion-background-color-rgb: 15, 15, 20;
+  --ion-text-color: var(--liftiq-text-100);
+  --ion-text-color-rgb: 240, 240, 245;
+
+  --ion-toolbar-background: var(--liftiq-surface);
+  --ion-tab-bar-background: var(--liftiq-elevated);
+  --ion-item-background: var(--liftiq-surface);
+  --ion-card-background: var(--liftiq-surface);
+  --ion-border-color: var(--liftiq-separator);
+
+  /* ---- Primary: Sky Blue (the only action color) ---- */
+  --ion-color-primary: #63c5ff;
+  --ion-color-primary-rgb: 99, 197, 255;
+  --ion-color-primary-contrast: #05101a;
+  --ion-color-primary-contrast-rgb: 5, 16, 26;
+  --ion-color-primary-shade: #57ade0;
+  --ion-color-primary-tint: #73cbff;
+
+  /* ---- Success: correct technique ---- */
+  --ion-color-success: #4ade80;
+  --ion-color-success-rgb: 74, 222, 128;
+  --ion-color-success-contrast: #05101a;
+  --ion-color-success-contrast-rgb: 5, 16, 26;
+  --ion-color-success-shade: #41c371;
+  --ion-color-success-tint: #5ce18d;
+
+  /* ---- Warning: angle near limit ---- */
+  --ion-color-warning: #fabd32;
+  --ion-color-warning-rgb: 250, 189, 50;
+  --ion-color-warning-contrast: #05101a;
+  --ion-color-warning-contrast-rgb: 5, 16, 26;
+  --ion-color-warning-shade: #dca62c;
+  --ion-color-warning-tint: #fbc447;
+
+  /* ---- Danger: bad technique / errors / favorite-on ---- */
+  --ion-color-danger: #ff6b6b;
+  --ion-color-danger-rgb: 255, 107, 107;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #e05e5e;
+  --ion-color-danger-tint: #ff7a7a;
+}

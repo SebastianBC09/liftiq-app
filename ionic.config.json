@@ -1,0 +1,8 @@
+{
+  "name": "liftiq-app",
+  "app_id": "com.liftiq.app",
+  "type": "angular-standalone",
+  "integrations": {
+    "capacitor": {}
+  }
+}
