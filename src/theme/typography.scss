@@ -1,0 +1,64 @@
+/*
+ * LiftIQ — Type scale
+ * Source of truth: liftiq_design_system.html
+ * Utility classes only — no component logic lives here.
+ */
+
+.liq-text-large-title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  color: var(--liq-text-100);
+}
+
+.liq-text-title-1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--liq-text-100);
+}
+
+.liq-text-title-2 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: var(--liq-text-100);
+}
+
+.liq-text-headline {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  color: var(--liq-text-100);
+}
+
+.liq-text-body {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--liq-text-60);
+}
+
+.liq-text-caption {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.01px;
+  color: var(--liq-text-35);
+}
+
+.liq-text-metric-hero {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+  color: var(--liq-sky-blue);
+}
+
+.liq-section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--liq-text-35);
+}

@@ -1,73 +1,88 @@
-/**
- * LiftIQ Design Tokens — dark-only by intent (gym lighting, screen held
- * at a distance). A light/dark toggle is an OPEN decision, not built here.
+/*
+ * LiftIQ — Design tokens
+ * Source of truth: liftiq_design_system.html
+ *
+ * This file only defines CSS custom properties (no logic). Components read
+ * these via [style.color], [ngClass], or plain CSS — that's property binding
+ * at the styling layer.
  */
 
 :root {
-  --liftiq-midnight: #0f0f14;
-  --liftiq-surface: #1a1a22;
-  --liftiq-elevated: #24242e;
-  --liftiq-sky-blue: #63c5ff;
-  --liftiq-sky-dim: #1a3a52;
-  --liftiq-good: #4ade80;
-  --liftiq-warn: #fabd32;
-  --liftiq-error: #ff6b6b;
+  /* ---------- Color · Backgrounds ---------- */
+  --liq-bg-midnight: #0f0f14;   // App background
+  --liq-surface-1: #1a1a22;     // Cards / sheets
+  --liq-surface-2: #24242e;     // Modals / tab bar
 
-  --liftiq-text-100: #f0f0f5;
-  --liftiq-text-60: rgba(240, 240, 245, 0.6);
-  --liftiq-text-35: rgba(240, 240, 245, 0.35);
-  --liftiq-separator: rgba(255, 255, 255, 0.07);
+  /* ---------- Color · Action ---------- */
+  --liq-sky-blue: #63c5ff;      // Primary action (only one)
+  --liq-sky-dim: #1a3a52;       // Tinted fill behind the primary color
 
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 12px;
-  --space-lg: 16px;
-  --space-xl: 24px;
-  --space-2xl: 32px;
+  /* ---------- Color · Semantic feedback ---------- */
+  --liq-good: #4ade80;          // Técnica correcta / dentro de rango
+  --liq-warn: #fabd32;          // Cerca del límite
+  --liq-error: #ff6b6b;         // Fuera de rango / error
 
-  --radius-chip: 4px;
-  --radius-control: 10px;
-  --radius-card: 14px;
-  --radius-sheet: 20px;
+  /* ---------- Color · Text ---------- */
+  --liq-text-100: #f0f0f5;                  // Títulos primarios
+  --liq-text-60: rgba(240, 240, 245, 0.6);  // Texto secundario
+  --liq-text-35: rgba(240, 240, 245, 0.35); // Labels / hints
+  --liq-separator: rgba(255, 255, 255, 0.07);
 
-  --ion-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* ---------- Spacing scale ---------- */
+  --liq-space-xs: 4px;
+  --liq-space-sm: 8px;
+  --liq-space-md: 12px;
+  --liq-space-lg: 16px;
+  --liq-space-xl: 24px;
+  --liq-space-2xl: 32px;
 
-  --ion-background-color: var(--liftiq-midnight);
-  --ion-background-color-rgb: 15, 15, 20;
-  --ion-text-color: var(--liftiq-text-100);
-  --ion-text-color-rgb: 240, 240, 245;
+  /* ---------- Radius scale ---------- */
+  --liq-radius-sm: 4px;   // chips, badges
+  --liq-radius-md: 10px;  // inputs, botones
+  --liq-radius-lg: 14px;  // tarjetas de ejercicio
+  --liq-radius-xl: 20px;  // sheets / modales
 
-  --ion-toolbar-background: var(--liftiq-surface);
-  --ion-tab-bar-background: var(--liftiq-elevated);
-  --ion-item-background: var(--liftiq-surface);
-  --ion-card-background: var(--liftiq-surface);
-  --ion-border-color: var(--liftiq-separator);
+  /* ---------- Typography ---------- */
+  --liq-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --liq-font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
 
-  --ion-color-primary: #63c5ff;
+  /* =========================================================
+   * Ionic theme overrides
+   * Mapping our tokens onto Ionic's own CSS variables so every
+   * ion-* component (ion-button, ion-toggle, ion-item, etc.)
+   * follows the LiftIQ dark system without per-component overrides.
+   * ========================================================= */
+
+  --ion-color-primary: var(--liq-sky-blue);
   --ion-color-primary-rgb: 99, 197, 255;
   --ion-color-primary-contrast: #05101a;
   --ion-color-primary-contrast-rgb: 5, 16, 26;
-  --ion-color-primary-shade: #57ade0;
-  --ion-color-primary-tint: #73cbff;
+  --ion-color-primary-shade: #57adde;
+  --ion-color-primary-tint: #72cbff;
 
-  --ion-color-success: #4ade80;
-  --ion-color-success-rgb: 74, 222, 128;
-  --ion-color-success-contrast: #05101a;
-  --ion-color-success-contrast-rgb: 5, 16, 26;
-  --ion-color-success-shade: #41c371;
-  --ion-color-success-tint: #5ce18d;
+  --ion-color-success: var(--liq-good);
+  --ion-color-warning: var(--liq-warn);
+  --ion-color-danger: var(--liq-error);
 
-  --ion-color-warning: #fabd32;
-  --ion-color-warning-rgb: 250, 189, 50;
-  --ion-color-warning-contrast: #05101a;
-  --ion-color-warning-contrast-rgb: 5, 16, 26;
-  --ion-color-warning-shade: #dca62c;
-  --ion-color-warning-tint: #fbc447;
+  --ion-background-color: var(--liq-bg-midnight);
+  --ion-background-color-rgb: 15, 15, 20;
+  --ion-text-color: var(--liq-text-100);
+  --ion-text-color-rgb: 240, 240, 245;
 
-  --ion-color-danger: #ff6b6b;
-  --ion-color-danger-rgb: 255, 107, 107;
-  --ion-color-danger-contrast: #ffffff;
-  --ion-color-danger-contrast-rgb: 255, 255, 255;
-  --ion-color-danger-shade: #e05e5e;
-  --ion-color-danger-tint: #ff7a7a;
+  --ion-toolbar-background: var(--liq-bg-midnight);
+  --ion-toolbar-border-color: var(--liq-separator);
+  --ion-tab-bar-background: var(--liq-surface-2);
+  --ion-tab-bar-border-color: var(--liq-separator);
+
+  --ion-item-background: var(--liq-surface-1);
+  --ion-border-color: var(--liq-separator);
+
+  --ion-font-family: var(--liq-font-sans);
+}
+
+/* LiftIQ is dark-only by design (see design system rationale: dark reduces
+   eye strain in gym lighting and makes the BlazePose skeleton overlay pop).
+   We force the Ionic dark palette regardless of system preference. */
+body {
+  color-scheme: dark;
 }
