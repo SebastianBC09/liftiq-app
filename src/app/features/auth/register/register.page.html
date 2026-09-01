@@ -1,93 +1,47 @@
 <ion-content [fullscreen]="true" class="ion-padding">
-  <app-auth-header title="Crea tu cuenta" subtitle="Empecemos con lo básico"></app-auth-header>
+  <auth-header></auth-header>
 
-  <!-- Property binding: currentStep/totalSteps drive which dots are lit -->
-  <app-step-indicator [currentStep]="currentStep" [totalSteps]="totalSteps"></app-step-indicator>
+  <step-indicator></step-indicator>
 
-  <!-- *ngIf switches between step 1 and step 2 while `this` keeps all state,
-       so going back to step 1 doesn't lose anything already typed. -->
-  <form *ngIf="currentStep === 1">
-    <app-text-field
-      label="Nombre"
-      placeholder="Tu nombre"
-      [(value)]="name"
-      [touched]="nameTouched"
-      [errorMessage]="!name ? 'El nombre es obligatorio' : ''"
-      (fieldBlur)="nameTouched = true"
-    ></app-text-field>
+  <!-- Step 1: both steps stay in the DOM; [hidden] toggles which one shows. -->
+  <form [hidden]="currentStep !== 1">
+    <text-field></text-field>
+    <password-field></password-field>
 
-    <app-text-field
-      label="Correo electrónico"
-      type="email"
-      placeholder="tu@correo.com"
-      [(value)]="email"
-      [touched]="emailTouched"
-      [errorMessage]="emailError"
-      (fieldBlur)="emailTouched = true"
-    ></app-text-field>
-
-    <app-password-field
-      label="Contraseña"
-      [showStrength]="true"
-      [(value)]="password"
-      [touched]="passwordTouched"
-      [errorMessage]="passwordError"
-      (fieldBlur)="passwordTouched = true"
-    ></app-password-field>
-
-    <app-password-field
-      label="Confirmar contraseña"
-      [(value)]="confirmPassword"
-      [touched]="confirmTouched"
-      [errorMessage]="confirmError"
-      (fieldBlur)="confirmTouched = true"
-    ></app-password-field>
-
-    <app-primary-button label="Siguiente" (pressed)="goToStep2()"></app-primary-button>
+    <primary-button></primary-button>
+    <button class="btn-back" type="button" (click)="goToStep2()">Siguiente</button>
   </form>
 
-  <form *ngIf="currentStep === 2">
-    <app-text-field
-      label="Altura (cm)"
-      type="number"
-      placeholder="175"
-      [value]="heightCm === null ? '' : heightCm.toString()"
-      (valueChange)="heightCm = $event === '' ? null : +$event"
-    ></app-text-field>
+  <!-- Step 2 -->
+  <form [hidden]="currentStep !== 2">
+    <div class="field">
+      <label class="field__label">Altura (cm)</label>
+      <input class="field__input" type="number" placeholder="175" [(heightCm)]="heightCm" name="heightCm" />
+    </div>
 
-    <app-text-field
-      label="Peso (kg)"
-      type="number"
-      placeholder="70"
-      [value]="weightKg === null ? '' : weightKg.toString()"
-      (valueChange)="weightKg = $event === '' ? null : +$event"
-    ></app-text-field>
+    <div class="field">
+      <label class="field__label">Peso (kg)</label>
+      <input class="field__input" type="number" placeholder="70" [(weightKg)]="weightKg" name="weightKg" />
+    </div>
 
-    <!-- Live BMI: recalculated on every input via the bmi/bmiColor getters -->
-    <div class="bmi-preview" *ngIf="bmi !== null">
+    <!-- Live BMI: recomputed on every input via the bmi / bmiColor getters. -->
+    <div class="bmi-preview" [hidden]="bmi === null">
       <span class="bmi-preview__label">IMC estimado</span>
       <span class="bmi-preview__value" [style.color]="bmiColor">{{ bmi | number: '1.1-1' }}</span>
     </div>
 
     <p class="section-label">Nivel de experiencia</p>
-    <!-- [(selected)] two-way binding on the generic chip-select -->
-    <app-chip-select
-      [options]="experienceOptions"
-      [(selected)]="experienceLevel"
-    ></app-chip-select>
+    <chip-select></chip-select>
 
     <div class="step-actions">
       <button class="btn-back" type="button" (click)="goToStep1()">Atrás</button>
-      <app-primary-button
-        label="Crear cuenta"
-        [disabled]="step2Invalid"
-        [loading]="submitting"
-        (pressed)="onSubmit()"
-      ></app-primary-button>
+      <button class="btn" type="button" [disabled]="submitting" [class.loading]="submitting" (click)="onSubmit()">
+        {{ submitting ? 'Creando…' : 'Crear cuenta' }}
+      </button>
     </div>
   </form>
 
-  <p class="switch-auth" *ngIf="currentStep === 1">
+  <p class="switch-auth" [hidden]="currentStep !== 1">
     ¿Ya tienes cuenta?
     <a routerLink="/auth/login">Inicia sesión</a>
   </p>

@@ -2,6 +2,58 @@
   --background: var(--liq-bg-midnight);
 }
 
+// Native step-2 inputs (height / weight) reuse the field look.
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--liq-space-lg);
+}
+
+.field__label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--liq-text-60);
+}
+
+.field__input {
+  height: 44px;
+  border-radius: var(--liq-radius-md);
+  background: var(--liq-surface-1);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  color: var(--liq-text-100);
+  font-size: 15px;
+  padding: 0 var(--liq-space-md);
+  font-family: var(--liq-font-sans);
+
+  &:focus {
+    outline: none;
+    border-color: var(--liq-sky-blue);
+  }
+
+  &::placeholder {
+    color: var(--liq-text-35);
+  }
+}
+
+.btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: var(--liq-radius-md);
+  background: var(--liq-sky-blue);
+  color: #05101a;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--liq-font-sans);
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
 .section-label {
   font-size: 11px;
   font-weight: 500;
