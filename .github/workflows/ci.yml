@@ -6,39 +6,31 @@ on:
   pull_request:
     branches: [main]
 
-permissions:
-  contents: read
-
 jobs:
-  lint:
+  lint-test-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-          cache: 'npm'
-      - run: npm ci
-      - run: npx ng lint
+      - uses: actions/checkout@v4
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'npm'
-      - run: npm ci
-      - run: npx ng build
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-          cache: 'npm'
       - run: npm ci
-      - run: npx ng test --watch=false
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests (headless Chrome)
+        run: npm run test:ci
+
+      - name: Build (production)
+        run: npm run build:prod
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: liftiq-app-www
+          path: www/
+          retention-days: 7
