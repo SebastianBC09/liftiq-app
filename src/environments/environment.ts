@@ -1,6 +1,6 @@
 export const environment = {
-  production: true,
-  apiUrl: 'https://api.liftiq.app/api/v1',
+  production: false,
+  apiUrl: 'http://localhost:8000/api/v1',
   tfModelVariant: 'BlazePose',
   calibrationThreshold: 0.85,
   calibrationHoldSeconds: 2,
