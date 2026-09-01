@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-text-field',
+  selector: 'text-field',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './text-field.component.html',
