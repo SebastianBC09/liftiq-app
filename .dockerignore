@@ -1,7 +1,9 @@
 node_modules
 www
 dist
+out-tsc
 .angular
+coverage
 .git
-ios
-android
+.github
+*.log
