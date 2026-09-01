@@ -1,0 +1,16 @@
+:host {
+  --background: var(--liq-bg-midnight);
+}
+
+.switch-auth {
+  text-align: center;
+  margin-top: var(--liq-space-xl);
+  font-size: 13px;
+  color: var(--liq-text-60);
+
+  a {
+    color: var(--liq-sky-blue);
+    font-weight: 500;
+    text-decoration: none;
+  }
+}

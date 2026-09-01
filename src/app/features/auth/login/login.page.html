@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <app-auth-header title="Bienvenido de vuelta" subtitle="Inicia sesión para continuar tu progreso"></app-auth-header>
+
+  <form>
+    <!-- [(value)] is the custom two-way binding exposed by text-field -->
+    <app-text-field
+      label="Correo electrónico"
+      type="email"
+      placeholder="tu@correo.com"
+      [(value)]="email"
+      [touched]="emailTouched"
+      [errorMessage]="emailError"
+      (fieldBlur)="emailTouched = true"
+    ></app-text-field>
+
+    <app-password-field
+      label="Contraseña"
+      [(value)]="password"
+      [touched]="passwordTouched"
+      [errorMessage]="passwordError"
+      (fieldBlur)="passwordTouched = true"
+    ></app-password-field>
+
+    <!-- (pressed) is an event binding from primary-button -->
+    <app-primary-button
+      label="Iniciar sesión"
+      [disabled]="formInvalid"
+      [loading]="submitting"
+      (pressed)="onSubmit()"
+    ></app-primary-button>
+  </form>
+
+  <p class="switch-auth">
+    ¿No tienes cuenta?
+    <a routerLink="/auth/register">Regístrate</a>
+  </p>
+</ion-content>
