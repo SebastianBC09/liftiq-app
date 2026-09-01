@@ -1,14 +1,26 @@
 <div class="chip-row">
-  <!-- *ngFor renders one chip per option; [class.active] is a property
-       binding driven by isActive(); (click) is the event binding that
-       updates state and re-emits it via [(selected)]. -->
   <button
     class="chip"
     type="button"
-    *ngFor="let option of options"
-    [class.active]="isActive(option.value)"
-    (click)="onSelect(option.value)"
+    [class.active]="isActive('beginner')"
+    (click)="onSelect('beginner')"
   >
-    {{ option.label }}
+    Principiante
+  </button>
+  <button
+    class="chip"
+    type="button"
+    [class.active]="isActive('intermediate')"
+    (click)="onSelect('intermediate')"
+  >
+    Intermedio
+  </button>
+  <button
+    class="chip"
+    type="button"
+    [class.active]="isActive('advanced')"
+    (click)="onSelect('advanced')"
+  >
+    Avanzado
   </button>
 </div>
