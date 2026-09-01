@@ -1,0 +1,9 @@
+ion-tab-bar {
+  --background: var(--liq-surface-2);
+  --border: 0.5px solid var(--liq-separator);
+}
+
+ion-tab-button {
+  --color: rgba(255, 255, 255, 0.35);
+  --color-selected: var(--liq-sky-blue);
+}

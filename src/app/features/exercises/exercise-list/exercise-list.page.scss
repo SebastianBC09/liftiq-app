@@ -1,0 +1,60 @@
+:host {
+  --background: var(--liq-bg-midnight);
+}
+
+.header {
+  padding: var(--liq-space-sm) var(--liq-space-md) var(--liq-space-md);
+}
+
+.chip-wrap {
+  padding: 0 var(--liq-space-md) var(--liq-space-md);
+}
+
+.cards {
+  padding: 0 var(--liq-space-md);
+}
+
+.ex-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--liq-radius-lg);
+  padding: var(--liq-space-md);
+  margin-bottom: var(--liq-space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--liq-space-md);
+  cursor: pointer;
+}
+
+.ex-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ex-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--liq-text-100);
+}
+
+.ex-sub {
+  font-size: 10px;
+  color: var(--liq-text-35);
+  margin-top: 2px;
+}
+
+.ex-fav {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.2);
+  line-height: 1;
+  padding: var(--liq-space-xs);
+
+  &.on {
+    color: var(--liq-error);
+  }
+}
+
+.empty-state {
+  padding: var(--liq-space-2xl) var(--liq-space-lg);
+  text-align: center;
+}
