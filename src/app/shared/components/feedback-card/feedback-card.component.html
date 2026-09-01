@@ -1,14 +1,5 @@
-<div
-  class="feedback"
-  [class.warn]="severity === 'warn'"
-  [class.error]="severity === 'error'"
-  [class.good]="severity === 'good'"
->
+<div class="feedback" [hidden]="dismissed" [class.warn]="severity === 'warn'" [class.error]="severity === 'error'"
+  [class.good]="severity === 'good'">
   <span class="feedback__message">{{ message }}</span>
-
-  <!-- (click) is an event binding: it calls the component's own handler,
-       which then emits the (dismissed) output up to the parent. -->
-  <button class="feedback__close" type="button" (click)="onDismiss()" aria-label="Cerrar">
-    ×
-  </button>
+  <button class="feedback__close" type="button" (click)="onDismiss()" aria-label="Cerrar">×</button>
 </div>
