@@ -1,0 +1,20 @@
+.steps {
+  display: flex;
+  gap: 6px;
+  padding: var(--liq-space-sm) 0;
+}
+
+.steps__dot {
+  width: 20px;
+  height: 3px;
+  border-radius: var(--liq-radius-sm);
+  background: rgba(255, 255, 255, 0.1);
+
+  &.completed {
+    background: var(--liq-good);
+  }
+
+  &.active {
+    background: var(--liq-sky-blue);
+  }
+}

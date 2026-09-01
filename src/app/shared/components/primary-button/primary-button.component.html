@@ -1,0 +1,13 @@
+<button
+  class="btn"
+  type="button"
+  [disabled]="disabled || loading"
+  [class.loading]="loading"
+  (click)="onClick()"
+>
+  <!-- *ngIf/else toggles between the label and a loading spinner -->
+  <span *ngIf="!loading; else spinner">{{ label }}</span>
+  <ng-template #spinner>
+    <span class="btn__spinner"></span>
+  </ng-template>
+</button>

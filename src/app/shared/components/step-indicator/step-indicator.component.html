@@ -1,0 +1,10 @@
+<div class="steps">
+  <!-- *ngFor over a derived array; [class.active]/[class.completed] are
+       property bindings comparing each step number to currentStep. -->
+  <span
+    class="steps__dot"
+    *ngFor="let step of steps"
+    [class.active]="step === currentStep"
+    [class.completed]="step < currentStep"
+  ></span>
+</div>

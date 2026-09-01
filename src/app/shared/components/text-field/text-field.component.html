@@ -1,0 +1,15 @@
+<div class="field" [class.invalid]="touched && errorMessage">
+  <label class="field__label">{{ label }}</label>
+
+  <input
+    class="field__input"
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="onInput($any($event.target).value)"
+    (blur)="onBlur()"
+  />
+
+  <!-- *ngIf: only show the error line once the field is touched and invalid -->
+  <p class="field__error" *ngIf="touched && errorMessage">{{ errorMessage }}</p>
+</div>

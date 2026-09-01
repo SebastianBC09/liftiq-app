@@ -1,0 +1,24 @@
+.auth-header {
+  padding: var(--liq-space-2xl) 0 var(--liq-space-xl);
+}
+
+.auth-header__mark {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--liq-sky-blue);
+  letter-spacing: -0.2px;
+  margin-bottom: var(--liq-space-lg);
+}
+
+.auth-header__title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--liq-text-100);
+  margin-bottom: 4px;
+}
+
+.auth-header__subtitle {
+  font-size: 14px;
+  color: var(--liq-text-60);
+}

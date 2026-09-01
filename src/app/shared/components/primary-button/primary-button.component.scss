@@ -1,0 +1,35 @@
+.btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: var(--liq-radius-md);
+  background: var(--liq-sky-blue);
+  color: #05101a;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--liq-font-sans);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.btn__spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(5, 16, 26, 0.3);
+  border-top-color: #05101a;
+  animation: liq-spin 0.7s linear infinite;
+}
+
+@keyframes liq-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

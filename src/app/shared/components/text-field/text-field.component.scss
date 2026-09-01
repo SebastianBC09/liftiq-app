@@ -1,0 +1,41 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--liq-space-lg);
+}
+
+.field__label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--liq-text-60);
+}
+
+.field__input {
+  height: 44px;
+  border-radius: var(--liq-radius-md);
+  background: var(--liq-surface-1);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  color: var(--liq-text-100);
+  font-size: 15px;
+  padding: 0 var(--liq-space-md);
+  font-family: var(--liq-font-sans);
+
+  &:focus {
+    outline: none;
+    border-color: var(--liq-sky-blue);
+  }
+
+  &::placeholder {
+    color: var(--liq-text-35);
+  }
+}
+
+.field.invalid .field__input {
+  border-color: var(--liq-error);
+}
+
+.field__error {
+  font-size: 11px;
+  color: var(--liq-error);
+}

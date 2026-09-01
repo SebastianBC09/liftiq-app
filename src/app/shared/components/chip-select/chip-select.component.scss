@@ -1,0 +1,23 @@
+.chip-row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--liq-text-60);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: var(--liq-font-sans);
+
+  &.active {
+    background: var(--liq-sky-dim);
+    color: var(--liq-sky-blue);
+    border-color: rgba(99, 197, 255, 0.25);
+  }
+}

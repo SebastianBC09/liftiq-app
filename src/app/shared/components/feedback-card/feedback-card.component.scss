@@ -1,0 +1,51 @@
+.feedback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--liq-space-sm);
+  padding: var(--liq-space-sm) var(--liq-space-md);
+  border-radius: var(--liq-radius-md);
+  border-top: 0.5px solid transparent;
+
+  &.warn {
+    background: rgba(250, 189, 50, 0.1);
+    border-top-color: rgba(250, 189, 50, 0.2);
+
+    .feedback__message {
+      color: rgba(255, 220, 120, 0.85);
+    }
+  }
+
+  &.error {
+    background: rgba(255, 107, 107, 0.1);
+    border-top-color: rgba(255, 107, 107, 0.2);
+
+    .feedback__message {
+      color: rgba(255, 170, 170, 0.9);
+    }
+  }
+
+  &.good {
+    background: rgba(74, 222, 128, 0.1);
+    border-top-color: rgba(74, 222, 128, 0.2);
+
+    .feedback__message {
+      color: rgba(180, 240, 200, 0.9);
+    }
+  }
+}
+
+.feedback__message {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.feedback__close {
+  background: none;
+  border: none;
+  color: var(--liq-text-35);
+  font-size: 16px;
+  line-height: 1;
+  padding: var(--liq-space-xs);
+  cursor: pointer;
+}

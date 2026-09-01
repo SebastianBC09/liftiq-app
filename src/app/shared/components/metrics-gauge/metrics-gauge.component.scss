@@ -1,0 +1,23 @@
+.gauge {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--liq-radius-md);
+  padding: var(--liq-space-sm);
+  flex: 1;
+}
+
+.gauge__joint {
+  font-size: 8px;
+  color: var(--liq-text-35);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gauge__value {
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
