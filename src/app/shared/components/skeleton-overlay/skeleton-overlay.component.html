@@ -1,15 +1,23 @@
 <div class="overlay">
-  <!--
-    *ngFor renders one dot per keypoint.
-    Each [style.*] below is a property binding: the dot's position and
-    color follow whatever the parent passes in via [keypoints].
-  -->
   <span
     class="dot"
-    *ngFor="let kp of keypoints"
-    [style.left.%]="kp.xPercent"
-    [style.top.%]="kp.yPercent"
-    [style.background]="dotColor(kp)"
-    [title]="kp.name"
+    [style.left.%]="shoulder.xPercent"
+    [style.top.%]="shoulder.yPercent"
+    [style.background]="dotColor(shoulder)"
+    [title]="shoulder.name"
+  ></span>
+  <span
+    class="dot"
+    [style.left.%]="hip.xPercent"
+    [style.top.%]="hip.yPercent"
+    [style.background]="dotColor(hip)"
+    [title]="hip.name"
+  ></span>
+  <span
+    class="dot"
+    [style.left.%]="knee.xPercent"
+    [style.top.%]="knee.yPercent"
+    [style.background]="dotColor(knee)"
+    [title]="knee.name"
   ></span>
 </div>
