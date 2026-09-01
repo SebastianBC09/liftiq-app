@@ -5,9 +5,6 @@
   [class.loading]="loading"
   (click)="onClick()"
 >
-  <!-- *ngIf/else toggles between the label and a loading spinner -->
-  <span *ngIf="!loading; else spinner">{{ label }}</span>
-  <ng-template #spinner>
-    <span class="btn__spinner"></span>
-  </ng-template>
+  <span class="btn__label" [hidden]="loading">{{ label }}</span>
+  <span class="btn__spinner" [hidden]="!loading"></span>
 </button>
