@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -12,7 +12,7 @@ import { ChipSelectComponent } from '@shared/components/chip-select/chip-select.
 import { StepIndicatorComponent } from '@shared/components/step-indicator/step-indicator.component';
 
 @Component({
-  selector: 'app-register-page',
+  selector: 'register-page',
   standalone: true,
   imports: [
     CommonModule,
@@ -26,7 +26,6 @@ import { StepIndicatorComponent } from '@shared/components/step-indicator/step-i
     ChipSelectComponent,
     StepIndicatorComponent,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './register.page.html',
   styleUrl: './register.page.scss',
 })
