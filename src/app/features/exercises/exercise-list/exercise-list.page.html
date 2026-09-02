@@ -1,45 +1,38 @@
 <ion-content [fullscreen]="true">
   <div class="header">
     <h1 class="liq-text-title-1">Explorar</h1>
-    <p class="liq-text-caption">{{ exercises.length }} ejercicios · 7 grupos</p>
+    <p class="liq-text-caption">3 ejercicios · 7 grupos</p>
   </div>
 
-  <!-- (ionInput) event binding feeding back into searchTerm — a manual
-       two-way pattern since ion-searchbar isn't wrapped in ngModel here. -->
-  <ion-searchbar
-    placeholder="Buscar ejercicio..."
-    [value]="searchTerm"
-    (ionInput)="onSearchChange($event.detail.value)"
-  ></ion-searchbar>
+  <ion-searchbar placeholder="Buscar ejercicio..." [(ngModel)]="searchTerm" name="searchTerm"></ion-searchbar>
 
-  <!-- [(selected)] two-way binding — the SAME component used for
-       experience level in Register step 2. -->
   <div class="chip-wrap">
-    <app-chip-select [options]="groupOptions" [(selected)]="activeGroup"></app-chip-select>
+    <chip-select></chip-select>
   </div>
 
-  <!-- *ngFor over the filtered list; *ngIf for the empty-search state -->
-  <div class="cards" *ngIf="filteredExercises.length; else empty">
-    <div class="ex-card" *ngFor="let exercise of filteredExercises" (click)="openDetail(exercise)">
+  <div class="cards">
+    <div class="ex-card" (click)="openDetail('squat')">
       <div class="ex-info">
-        <p class="ex-name">{{ exercise.name }}</p>
-        <p class="ex-sub">{{ groupLabel(exercise.muscleGroup) }}</p>
+        <p class="ex-name">{{ squatName }}</p>
+        <p class="ex-sub">{{ squatGroup }}</p>
       </div>
-      <!-- [class.on] property binding + (click) event binding, with
-           stopPropagation so tapping the heart doesn't also open detail -->
-      <span
-        class="ex-fav"
-        [class.on]="exercise.isFavorite"
-        (click)="toggleFavorite(exercise, $event)"
-      >
-        ♥
-      </span>
+      <span class="ex-fav" [class.on]="squatFav" (click)="toggleSquatFav($event)">♥</span>
+    </div>
+
+    <div class="ex-card" (click)="openDetail('deadlift')">
+      <div class="ex-info">
+        <p class="ex-name">{{ deadliftName }}</p>
+        <p class="ex-sub">{{ deadliftGroup }}</p>
+      </div>
+      <span class="ex-fav" [class.on]="deadliftFav" (click)="toggleDeadliftFav($event)">♥</span>
+    </div>
+
+    <div class="ex-card" (click)="openDetail('bench-press')">
+      <div class="ex-info">
+        <p class="ex-name">{{ benchName }}</p>
+        <p class="ex-sub">{{ benchGroup }}</p>
+      </div>
+      <span class="ex-fav" [class.on]="benchFav" (click)="toggleBenchFav($event)">♥</span>
     </div>
   </div>
-
-  <ng-template #empty>
-    <div class="empty-state">
-      <p class="liq-text-body">No encontramos ejercicios con ese filtro.</p>
-    </div>
-  </ng-template>
 </ion-content>

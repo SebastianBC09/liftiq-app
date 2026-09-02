@@ -1,5 +1,4 @@
 <div class="gauge">
   <span class="gauge__joint">{{ label }}</span>
-  <!-- [style.color] is a property binding to the computed statusColor getter -->
   <span class="gauge__value" [style.color]="statusColor">{{ angle | number: '1.0-0' }}°</span>
 </div>
