@@ -3,7 +3,7 @@
 # ---------- Build stage ----------
 # Node version pinned to match the CI workflow (see .github/workflows/ci.yml).
 # Not a dependency bump — just the container's own Node runtime.
-FROM node:22-slim AS build
+FROM node:24-slim AS build
 
 WORKDIR /app
 
