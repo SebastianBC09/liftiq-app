@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "liftiq-app": {
+    "app": {
       "projectType": "application",
       "schematics": {
         "@ionic/angular-toolkit:page": {
@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "liftiq-app:build:production"
+              "buildTarget": "app:build:production"
             },
             "development": {
-              "buildTarget": "liftiq-app:build:development"
+              "buildTarget": "app:build:development"
             },
             "ci": {
               "progress": false
@@ -91,7 +91,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "liftiq-app:build"
+            "buildTarget": "app:build"
           }
         },
         "test": {
