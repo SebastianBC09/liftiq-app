@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -30,7 +30,7 @@ import { StepIndicatorComponent } from '@shared/components/step-indicator/step-i
   styleUrl: './register.page.scss',
 })
 export class RegisterPage {
-  constructor(private readonly router: Router) {}
+  private readonly router = inject(Router);
 
   currentStep = 1;
 
